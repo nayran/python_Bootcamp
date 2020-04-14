@@ -1,0 +1,5 @@
+pip list | awk '{print $1}'
+pip list
+pip show --verbose numpy | grep -i 'metadata'
+pip search tesseract
+pip freeze > requirements.txt
