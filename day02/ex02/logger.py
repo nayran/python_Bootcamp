@@ -15,7 +15,7 @@ def log(func):
             ft = ("%.4f ms" % ((end - start) * 1000))
         name = func.__name__
         name = name.replace('_', ' ')
-        t = open("machine.log", "a+")
+        t = open("machine.log", "a")
         t.write(f"({os.getlogin()})Running: {name.ljust(20)}")
         t.write(f"[ exec-time = {ft} ] \n")
         return final
