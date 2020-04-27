@@ -1,21 +1,32 @@
-def what_are_the_vars(...):
+def what_are_the_vars(*args, **kwargs):
     """Your code"""
+    obj = ObjectC()
+    for i, arg in enumerate(args):
+        setattr(obj, "var_%d" % i, arg)
+    for key, value in kwargs.items():
+        if hasattr(obj, key):
+            return None
+        setattr(obj, key, value)
+    return obj
     pass
 
-class ObjectC(object): 
+
+class ObjectC(object):
     def __init__(self):
         pass
 
-    def doom_printer(obj):
-        if obj is None:
-            print("ERROR")
-            print("end")
-            return
-    for attr in dir(obj): 
+
+def doom_printer(obj):
+    if obj is None:
+        print("ERROR")
+        print("end")
+        return
+    for attr in dir(obj):
         if attr[0] != '_':
             value = getattr(obj, attr)
-            print("{}: {}".format(attr, value)) 
+            print("{}: {}".format(attr, value))
     print("end")
+
 
 if __name__ == "__main__":
     obj = what_are_the_vars(7)
