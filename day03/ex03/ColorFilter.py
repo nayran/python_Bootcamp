@@ -17,14 +17,14 @@ class ColorFilter:
 
     @staticmethod
     def to_green(array):
-        img = array
+        img = numpy.array(array)
         img[:, :, 2] *= 0
         img[:, :, 0] *= 0
         return img
 
     @staticmethod
     def to_red(array):
-        img = array
-        img -= ColorFilter().to_blue(array)
+        img = numpy.array(array)
+        img -= ColorFilter.to_blue(array)
         img -= ColorFilter.to_green(array)
         return img
