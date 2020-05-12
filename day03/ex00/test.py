@@ -1,0 +1,23 @@
+from NumPyCreator import NumPyCreator
+npc = NumPyCreator()
+
+x = npc.from_list([[1, 2, 3], [6, 3, 4]])
+print("list: ")
+print(x)
+x = npc.from_tuple(("a", "b", "c"))
+print("\ntuple: ")
+print(x)
+x = npc.from_iterable(range(5))
+print("\niterable: ")
+print(x)
+
+shape = (3, 5)
+x = npc.from_shape(shape)
+print("\nshape: ")
+print(x)
+x = npc.random(shape)
+print("\nrandom: ")
+print(x)
+x = npc.identity(4)
+print("\nidentity: ")
+print(x)
