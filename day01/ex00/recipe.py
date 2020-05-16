@@ -3,7 +3,8 @@ def error(x):
 
 
 class Recipe:
-    def __init__(self, name, cooking_lvl, cooking_time, ingredients, recipe_type, description=""):
+    def __init__(self, name, cooking_lvl, cooking_time,
+                 ingredients, recipe_type, description=""):
         self.name = self.h_name(name)
         self.cooking_lvl = self.h_ckglvl(cooking_lvl)
         self.cooking_time = self.h_ckgtime(cooking_time)
@@ -68,6 +69,7 @@ class Recipe:
     def h_rcptype(self, recipe_type):
         if not isinstance(recipe_type, str):
             error("Recipe type must be a str")
-        elif not(recipe_type == "starter" or recipe_type == "lunch" or recipe_type == "dessert"):
+        elif not(recipe_type == "starter" or recipe_type == "lunch"
+                 or recipe_type == "dessert"):
             error("Recipe type must be starter, lunch or dessert")
         return(recipe_type)
